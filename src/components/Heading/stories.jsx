@@ -5,11 +5,9 @@ export default {
   component: Heading,
   args: {
     children: 'Something',
-    light: false,
   },
   ardTypes: {
     children: { type: 'string' },
-    light: { type: 'boolean' },
   },
   parameters: {
     backgrounds: {
@@ -29,5 +27,5 @@ Light.parameters = {
 
 Dark.args = {
   children: 'Something',
-  light: true,
+  colorDark: false,
 };
