@@ -1,0 +1,15 @@
+{
+  //Apenas para mostrar os snippets criados para este projeto
+
+  "Styled-components": {
+    "prefix": "styled",
+    "body": [
+      "import styled, { css } from 'styled-components';",
+      "",
+      "export const Container = styled.div`",
+      "\t${({ theme }) => css``}",
+      "`;"
+    ],
+    "description": "Create styled-component structure"
+  }
+}
