@@ -64,7 +64,17 @@
     "eslint-plugin-react": "^7.29.2",
     "jest-styled-components": "^7.0.8",
     "msw": "^0.38.1",
-    "prettier": "^2.5.1",
-    "webpack": "^5.70.0"
+    "prettier": "^2.5.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/src/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/src/**/*mock*.{js,jsx,ts,tsx}",
+      "!<rootDir>/src/styles/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/**/stories.{js,jsx,ts,tsx}",
+      "!<rootDir>/src/templates/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/"
+    ]
   }
 }
