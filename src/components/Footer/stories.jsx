@@ -4,7 +4,7 @@ export default {
   title: 'Footer',
   component: Footer,
   args: {
-    html: `<p>Feito com por Otávio Miranda e melhorado por Matheus Andrade</p>`,
+    footerHtml: `<p>Feito com por Otávio Miranda e melhorado por Matheus Andrade</p>`,
   },
   argTypes: {
     children: { type: 'string' },
