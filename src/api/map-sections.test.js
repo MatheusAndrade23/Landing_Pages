@@ -166,7 +166,6 @@ describe('map-sections', () => {
   it('should map a empty grid image', () => {
     const data = mapImageGrid({
       __component: 'section.section-grid',
-      _id: '602fdf2d540c00269e056175',
       description: 'abcdefg',
       title: 'Gallery',
       text_grid: [],
