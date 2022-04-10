@@ -3,7 +3,7 @@ import { renderTheme } from '../../styles/render-theme';
 import { NavLinks } from '.';
 
 import mock from './mock';
-import { theme } from '../../styles/theme';
+import { DarkTheme as theme } from '../../styles/DarkTheme';
 
 describe('<NavLink />', () => {
   it('should render links', () => {

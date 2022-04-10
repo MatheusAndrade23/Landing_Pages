@@ -1,8 +1,8 @@
-export const theme = {
+export const DefaultTheme = {
   colors: {
-    primaryColor: '#0a1128',
+    primaryColor: '#ffff',
     secondaryColor: '#dc143c',
-    white: '#ffff',
+    white: '#0a1128',
     mediumGray: '#DDDD',
   },
   fonts: {

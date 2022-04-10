@@ -12,14 +12,14 @@ exports[`<GridContent /> should render 1`] = `
 }
 
 .c3 {
-  color: #0a1128;
+  color: #ffff;
   font-size: 6.4rem;
   text-transform: uppercase;
 }
 
 .c0 {
-  background: #ffff;
-  color: #0a1128;
+  background: #0a1128;
+  color: #ffff;
   min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -172,14 +172,14 @@ exports[`<GridContent /> should render grid content 1`] = `
 }
 
 .c3 {
-  color: #0a1128;
+  color: #ffff;
   font-size: 6.4rem;
   text-transform: uppercase;
 }
 
 .c0 {
-  background: #ffff;
-  color: #0a1128;
+  background: #0a1128;
+  color: #ffff;
   min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;

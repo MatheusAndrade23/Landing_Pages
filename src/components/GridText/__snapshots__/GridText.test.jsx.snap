@@ -2,13 +2,13 @@
 
 exports[`<GridText /> should render the gridText with background 1`] = `
 .c4 {
-  color: #0a1128;
+  color: #ffff;
   font-size: 6.4rem;
   text-transform: uppercase;
 }
 
 .c9 {
-  color: #0a1128;
+  color: #ffff;
   font-size: 2.4rem;
   text-transform: none;
 }
@@ -48,8 +48,8 @@ exports[`<GridText /> should render the gridText with background 1`] = `
 }
 
 .c0 {
-  background: #ffff;
-  color: #0a1128;
+  background: #0a1128;
+  color: #ffff;
   min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -155,13 +155,13 @@ exports[`<GridText /> should render the gridText with background 1`] = `
 
 exports[`<GridText /> should render the gridText without component 1`] = `
 .c4 {
-  color: #0a1128;
+  color: #ffff;
   font-size: 6.4rem;
   text-transform: uppercase;
 }
 
 .c9 {
-  color: #0a1128;
+  color: #ffff;
   font-size: 2.4rem;
   text-transform: none;
 }
@@ -201,8 +201,8 @@ exports[`<GridText /> should render the gridText without component 1`] = `
 }
 
 .c0 {
-  background: #ffff;
-  color: #0a1128;
+  background: #0a1128;
+  color: #ffff;
   min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;

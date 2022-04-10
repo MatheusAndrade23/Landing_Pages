@@ -2,7 +2,7 @@
 
 exports[`<GridImage /> should render the GridImage with background 1`] = `
 .c3 {
-  color: #0a1128;
+  color: #ffff;
   font-size: 6.4rem;
   text-transform: uppercase;
 }
@@ -39,8 +39,8 @@ exports[`<GridImage /> should render the GridImage with background 1`] = `
 }
 
 .c0 {
-  background: #ffff;
-  color: #0a1128;
+  background: #0a1128;
+  color: #ffff;
   min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -158,7 +158,7 @@ exports[`<GridImage /> should render the GridImage with background 1`] = `
 
 exports[`<GridImage /> should render the GridImage without component 1`] = `
 .c3 {
-  color: #0a1128;
+  color: #ffff;
   font-size: 6.4rem;
   text-transform: uppercase;
 }
@@ -195,8 +195,8 @@ exports[`<GridImage /> should render the GridImage without component 1`] = `
 }
 
 .c0 {
-  background: #ffff;
-  color: #0a1128;
+  background: #0a1128;
+  color: #ffff;
   min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;

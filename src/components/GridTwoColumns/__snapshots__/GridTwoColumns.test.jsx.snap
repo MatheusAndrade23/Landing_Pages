@@ -2,7 +2,7 @@
 
 exports[`<GridTwoColumns /> should render grid with two columns 1`] = `
 .c5 {
-  color: #0a1128;
+  color: #ffff;
   font-size: 6.4rem;
   text-transform: uppercase;
 }
@@ -22,8 +22,8 @@ exports[`<GridTwoColumns /> should render grid with two columns 1`] = `
 }
 
 .c0 {
-  background: #ffff;
-  color: #0a1128;
+  background: #0a1128;
+  color: #ffff;
   min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
