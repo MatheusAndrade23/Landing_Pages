@@ -1,0 +1,68 @@
+{
+  //Apenas para mostrar os snippets criados para este projeto
+
+  "React-Component": {
+    "prefix": "component",
+    "body": [
+      "import P from 'prop-types';",
+      "import * as Styled from './styles';",
+      "",
+      "export const $1 = ({ children }) => {",
+      "\treturn (",
+      "\t\t<Styled.Container>",
+      "\t\t\t<h1>{children}</h1>",
+      "\t\t</Styled.Container>",
+      "\t);",
+      "};",
+      "",
+      "$1.propTypes = {",
+      "\tchildren: P.node.isRequired,",
+      "};"
+    ],
+    "description": "Create React Component structure"
+  },
+  "Storybook-Component": {
+    "prefix": "story",
+    "body": [
+      "import { $1 } from '.';",
+      "",
+      "export default {",
+      "\ttitle: '$1',",
+      "\tcomponent: $1,",
+      "\targs: {",
+      "\t\tchildren: '$1',",
+      "\t},",
+      "\targTypes: {",
+      "\t\tchildren: { type: 'string' },",
+      "\t},",
+      "};",
+      "",
+      "export const Template = (args) => {",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t<$1 {...args} />",
+      "\t\t</div>",
+      "\t);",
+      "};",
+      ""
+    ],
+    "description": "Create a React Component for Storybook"
+  },
+  "React-Test": {
+    "prefix": "test react",
+    "body": [
+      "import { screen } from '@testing-library/react';",
+      "import { renderTheme } from '../../styles/render-theme';",
+      "import { $1 } from '.';",
+      "",
+      "describe('<$1 />', () => {",
+      "\tit('should render', () => {",
+      "\t\trenderTheme(<$1>Children</$1>);",
+      "\t\texpect(screen.getByRole('heading')).toBeInTheDocument();",
+      "\t});",
+      "});",
+      ""
+    ],
+    "description": "Create a Test React"
+  }
+}
