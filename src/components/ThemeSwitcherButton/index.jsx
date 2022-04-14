@@ -13,7 +13,7 @@ export const ThemeSwitcherButton = ({ themeSwitcher }) => {
 
   return (
     <Styled.Container onClick={SwitchTheme}>
-      {!themeControl ? 'Mudar para tema escuro' : 'Mudar para tema claro'}
+      {!themeControl ? 'Mudar para Tema Escuro' : 'Mudar para Tema Claro'}
     </Styled.Container>
   );
 };

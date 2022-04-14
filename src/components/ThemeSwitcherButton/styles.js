@@ -16,5 +16,6 @@ export const Container = styled.button`
     z-index: 6;
     opacity: 0.7;
     cursor: pointer;
+    font-weight: bold;
   `}
 `;
