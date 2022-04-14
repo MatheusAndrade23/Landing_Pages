@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import * as Styled from './styles';
 import { ThemeProvider } from 'styled-components';
 
 import { DefaultTheme } from '../../styles/DefaultTheme';
@@ -19,6 +18,7 @@ import { GridImage } from '../../components/GridImage';
 import { Base } from '../Base';
 import { PageNotFound } from '../PageNotFound';
 import { Loading } from '../Loading';
+import { LoginPage } from '../LoginPage';
 
 import dataFake from '../../api/data.json';
 import { GlobalStyles } from '../../styles/global-styles';
@@ -98,7 +98,8 @@ function Home() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Base
+      {
+        /* <Base
         links={links}
         footerHtml={footerHtml}
         logoData={{ text, link, srcImg }}
@@ -124,7 +125,9 @@ function Home() {
             return <GridImage key={key} {...section} />;
           }
         })}
-      </Base>
+      </Base> */
+        <LoginPage themeSwitcher={ThemeSwitcher} />
+      }
       <GlobalStyles />
     </ThemeProvider>
   );
