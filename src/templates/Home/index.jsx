@@ -24,7 +24,7 @@ import dataFake from '../../api/data.json';
 import { GlobalStyles } from '../../styles/global-styles';
 
 function Home() {
-  const LINK_API = `${config.url}`;
+  const LINK_API = `${config.linkApi}`;
 
   const location = useLocation();
 
