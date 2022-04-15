@@ -13,7 +13,7 @@ export const Container = styled.div`
   `}
 `;
 
-export const Form = styled.form`
+export const Form = styled.div`
   ${({ theme }) => css`
     border: 2px solid ${theme.colors.secondaryColor};
     border-radius: 10px;
