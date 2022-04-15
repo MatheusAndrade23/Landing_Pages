@@ -14,6 +14,7 @@ import { GridTwoColumns } from '../../components/GridTwoColumns';
 import { GridContent } from '../../components/GridContent';
 import { GridText } from '../../components/GridText';
 import { GridImage } from '../../components/GridImage';
+import { MessageComponent } from '../../components/MessageComponent';
 
 import { Base } from '../Base';
 import { PageNotFound } from '../PageNotFound';
@@ -24,13 +25,14 @@ import dataFake from '../../api/data.json';
 import { GlobalStyles } from '../../styles/global-styles';
 
 function Home() {
-  const LINK_API = `${config.linkApi}`;
-
   const location = useLocation();
 
   const [theme, setTheme] = useState({ ...DefaultTheme });
   const [themeControl, setThemeControl] = useState(false);
   const [data, setData] = useState([]);
+
+  const [showLandingPage, setShowLandingPage] = useState(false);
+  const [message, setMessage] = useState(undefined);
 
   const ThemeSwitcher = () => {
     setThemeControl((control) => !control);
@@ -98,36 +100,45 @@ function Home() {
 
   return (
     <ThemeProvider theme={theme}>
-      {
-        /* <Base
-        links={links}
-        footerHtml={footerHtml}
-        logoData={{ text, link, srcImg }}
-        themeSwitcher={ThemeSwitcher}
-      >
-        {sections.map((section, index) => {
-          const { component } = section;
-          const key = `${slug}-${index}`;
+      <>
+        {message && <MessageComponent text={message} />}
+        {showLandingPage ? (
+          <Base
+            links={links}
+            footerHtml={footerHtml}
+            logoData={{ text, link, srcImg }}
+            themeSwitcher={ThemeSwitcher}
+          >
+            {sections.map((section, index) => {
+              const { component } = section;
+              const key = `${slug}-${index}`;
 
-          if (component === 'section.section-two-columns') {
-            return <GridTwoColumns key={key} {...section} />;
-          }
+              if (component === 'section.section-two-columns') {
+                return <GridTwoColumns key={key} {...section} />;
+              }
 
-          if (component === 'section.section-content') {
-            return <GridContent key={key} {...section} />;
-          }
+              if (component === 'section.section-content') {
+                return <GridContent key={key} {...section} />;
+              }
 
-          if (component === 'section.section-grid-text') {
-            return <GridText key={key} {...section} />;
-          }
+              if (component === 'section.section-grid-text') {
+                return <GridText key={key} {...section} />;
+              }
 
-          if (component === 'section.section-grid-image') {
-            return <GridImage key={key} {...section} />;
-          }
-        })}
-      </Base> */
-        <LoginPage themeSwitcher={ThemeSwitcher} />
-      }
+              if (component === 'section.section-grid-image') {
+                return <GridImage key={key} {...section} />;
+              }
+            })}
+          </Base>
+        ) : (
+          <LoginPage
+            themeSwitcher={ThemeSwitcher}
+            setShowLandingPage={setShowLandingPage}
+            setMessage={setMessage}
+          />
+        )}
+      </>
+
       <GlobalStyles />
     </ThemeProvider>
   );
