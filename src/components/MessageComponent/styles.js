@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${({ theme }) => css`
-    position: absolute;
+    position: fixed;
     background-color: ${theme.colors.white};
     padding: 0 40px;
     width: max-content;

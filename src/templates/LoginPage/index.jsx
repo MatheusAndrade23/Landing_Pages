@@ -13,9 +13,10 @@ export const LoginPage = ({
   themeSwitcher,
   setShowLandingPage,
   setMessage,
+  user,
+  setUser,
 }) => {
   const [loginControl, setLoginControl] = useState(false);
-  const [user, setUser] = useState({});
 
   const handleOtherAction = () => {
     setLoginControl((control) => !control);
@@ -92,4 +93,6 @@ LoginPage.propTypes = {
   themeSwitcher: P.func,
   setShowLandingPage: P.func,
   setMessage: P.func,
+  user: P.object,
+  setUser: P.func,
 };

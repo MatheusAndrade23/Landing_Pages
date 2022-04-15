@@ -31,8 +31,10 @@ function Home() {
   const [themeControl, setThemeControl] = useState(false);
   const [data, setData] = useState([]);
 
+  const [loadingControl, setLoadingControl] = useState(false);
   const [showLandingPage, setShowLandingPage] = useState(false);
   const [message, setMessage] = useState(undefined);
+  const [user, setUser] = useState({});
 
   const ThemeSwitcher = () => {
     setThemeControl((control) => !control);
@@ -45,25 +47,35 @@ function Home() {
   };
 
   useEffect(() => {
-    const pathName = location.pathname.replace(/[^a-z0-9-_]/gi, '');
-    const slug = pathName ? pathName : config.defaultSlug;
-
-    const loadData = async () => {
-      // try {
-      //   const data = await fetch(LINK_API + slug);
-      //   const json = await data.json();
-      //   const pageData = mapData(json);
-      //   setData(pageData[0]);
-      // } catch (e) {
-      //   setData(undefined);
-      // }
-
-      const pageData = mapData(dataFake);
-      setData(...pageData);
-    };
-
-    loadData();
-  }, [location]);
+    if (showLandingPage) {
+      setLoadingControl(true);
+      fetch(`${config.linkApi}/landing-pages`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user),
+      })
+        .then((resp) => resp.json())
+        .then((data) => {
+          if (data.error) {
+            setLoadingControl(false);
+            setMessage(`${data.code}: ${data.message}`);
+            setTimeout(() => {
+              setMessage(undefined);
+            }, 3000);
+          } else {
+            setLoadingControl(false);
+            const pageData = mapData(data.page);
+            setData(pageData);
+            setMessage(`${data.code}: ${data.message}`);
+            setTimeout(() => {
+              setMessage(undefined);
+            }, 3000);
+          }
+        });
+    }
+  }, [user, showLandingPage]);
 
   useEffect(() => {
     if (data === undefined) {
@@ -87,26 +99,23 @@ function Home() {
     );
   }
 
-  if (data && !data.slug) {
-    return (
-      <ThemeProvider theme={theme}>
-        <Loading />
-      </ThemeProvider>
-    );
-  }
-
-  const { menu, sections, footerHtml, slug } = data;
-  const { links, text, link, srcImg } = menu;
+  const { menu = {}, sections = [], footerHtml = '', slug = '' } = data;
+  const { links = [], text = '', link = '', srcImg = '' } = menu;
 
   return (
     <ThemeProvider theme={theme}>
       <>
+        {loadingControl && <Loading />}
         {message && <MessageComponent text={message} />}
         {showLandingPage ? (
           <Base
             links={links}
             footerHtml={footerHtml}
-            logoData={{ text, link, srcImg }}
+            logoData={{
+              text,
+              link,
+              srcImg,
+            }}
             themeSwitcher={ThemeSwitcher}
           >
             {sections.map((section, index) => {
@@ -135,10 +144,11 @@ function Home() {
             themeSwitcher={ThemeSwitcher}
             setShowLandingPage={setShowLandingPage}
             setMessage={setMessage}
+            user={user}
+            setUser={setUser}
           />
         )}
       </>
-
       <GlobalStyles />
     </ThemeProvider>
   );
