@@ -68,3 +68,45 @@ export const InputSubmit = styled.input`
     }
   `}
 `;
+
+export const OtherAction = styled.div`
+  ${({ theme }) => css`
+    color: ${theme.colors.secondaryColor};
+    width: 250px;
+    height: 20px;
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    & > p {
+      font-size: 15px;
+    }
+
+    & > button {
+      border: none;
+      background: transparent;
+      margin-left: 5px;
+      color: ${theme.colors.secondaryColor};
+      cursor: pointer;
+      font-style: italic;
+      font-size: 15px;
+      margin-top: 2px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  `}
+`;
+
+export const Or = styled.p`
+  ${({ theme }) => css`
+    height: 15px;
+    margin: 0 auto;
+    color: ${theme.colors.secondaryColor};
+    font-style: italic;
+  `}
+`;
