@@ -21,7 +21,6 @@ import { PageNotFound } from '../PageNotFound';
 import { Loading } from '../Loading';
 import { LoginPage } from '../LoginPage';
 
-import dataFake from '../../api/data.json';
 import { GlobalStyles } from '../../styles/global-styles';
 
 function Home() {
@@ -29,7 +28,7 @@ function Home() {
 
   const [theme, setTheme] = useState({ ...DefaultTheme });
   const [themeControl, setThemeControl] = useState(false);
-  const [data, setData] = useState([]);
+  const [page, setPage] = useState([]);
 
   const [loadingControl, setLoadingControl] = useState(false);
   const [showLandingPage, setShowLandingPage] = useState(false);
@@ -67,7 +66,7 @@ function Home() {
           } else {
             setLoadingControl(false);
             const pageData = mapData(data.page);
-            setData(pageData);
+            setPage(...pageData);
             setMessage(`${data.code}: ${data.message}`);
             setTimeout(() => {
               setMessage(undefined);
@@ -78,20 +77,20 @@ function Home() {
   }, [user, showLandingPage]);
 
   useEffect(() => {
-    if (data === undefined) {
+    if (page === undefined) {
       document.title = `Página não encontrada | ${config.siteName}`;
     }
 
-    if (data && !data.slug) {
-      document.title = `Carregando... | ${config.siteName}`;
+    if (page && !page.slug) {
+      document.title = `Login | ${config.siteName}`;
     }
 
-    if (data && data.title) {
-      document.title = `${data.title} | ${config.siteName}`;
+    if (page && page.title) {
+      document.title = `${page.title} | ${config.siteName}`;
     }
-  }, [data]);
+  }, [page]);
 
-  if (data === undefined) {
+  if (page === undefined) {
     return (
       <ThemeProvider theme={theme}>
         <PageNotFound />
@@ -99,7 +98,7 @@ function Home() {
     );
   }
 
-  const { menu = {}, sections = [], footerHtml = '', slug = '' } = data;
+  const { menu = {}, sections = [], footerHtml = '', slug = '' } = page;
   const { links = [], text = '', link = '', srcImg = '' } = menu;
 
   return (
