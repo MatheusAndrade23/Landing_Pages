@@ -6,7 +6,7 @@
 
 <h3 align="center">É um gerador de landing pages que monta uma página à escolha do usuário.</h3>
 
-#### O projeto é constituído de duas páginas: O gerador <a href="https://github.com/MatheusAndrade23/Landing_Pages_Generator">(clique para ver o código)</a> e a página (o repositório em que você está). O gerador (NodeJS) envia um arquivo JSON que contem todas as informações da página a ser montada para o Front-End (ReactJS), que, por sua vez, as interpreta e renderiza a página.
+#### O projeto é constituído por duas partes: O gerador <a href="https://github.com/MatheusAndrade23/Landing_Pages_Generator">(clique para ver o código)</a> e a página (o repositório em que você está). O gerador (NodeJS) envia um arquivo JSON que contem todas as informações da tela a ser montada para o Front-End (ReactJS), que, por sua vez, as interpreta e faz a renderização.
 
 <br>
 
