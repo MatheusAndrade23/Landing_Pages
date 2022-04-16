@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MessageComponent /> should render 1`] = `
+.c0 {
+  position: fixed;
+  background-color: #0a1128;
+  padding: 0 40px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  z-index: 10;
+  border: 2px solid #dc143c;
+  border-radius: 10px;
+  top: 70px;
+  right: 20px;
+}
+
+.c1 {
+  color: #ffff;
+  font-style: bold;
+  font-family: 'Montserrat',sans-serif;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <p
+      class="c1"
+    >
+      um texto qualquer
+    </p>
+  </div>
+</div>
+`;
