@@ -9,7 +9,6 @@ export const Container = styled.div`
     z-index: 10;
     border: 2px solid ${theme.colors.secondaryColor};
     border-radius: 10px;
-
     top: 70px;
     right: 20px;
   `}
@@ -18,7 +17,6 @@ export const Container = styled.div`
 export const Text = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.primaryColor};
-    font-style: bold;
     font-family: ${theme.fonts.family.secondary};
   `}
 `;
